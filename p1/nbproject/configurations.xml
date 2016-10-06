@@ -4,6 +4,8 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>FileHandler.h</itemPath>
+      <itemPath>Matriz.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -12,6 +14,8 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>FileHandler.cpp</itemPath>
+      <itemPath>Matriz.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -36,6 +40,14 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="FileHandler.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="FileHandler.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Matriz.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Matriz.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
@@ -59,6 +71,14 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="FileHandler.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="FileHandler.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="Matriz.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="Matriz.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
