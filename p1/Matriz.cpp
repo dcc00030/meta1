@@ -63,7 +63,8 @@ bool Matriz::insertar(int x, int y, int dato) {
 
 Matriz::~Matriz() {
     for (int i = 0; i < fil; i++) {
-        delete [] m[i];
+        delete[] m[i];
     }
     delete []m;
+    
 }

@@ -14,18 +14,20 @@
 #ifndef MATRIZ_H
 #define MATRIZ_H
 
+#include <iostream>
+using namespace std;
+
 class Matriz {
-    public:
-        Matriz(int nF, int nC);
-        
-        int at(int x, int y);
-        bool eliminar(int x, int y);
-        bool insertar(int x, int y, int dato);
-        
-        virtual ~Matriz();
-    private:
-        int fil,col;
-        int **m;
+public:
+    Matriz(int nF, int nC);
+
+    int at(int x, int y);
+    bool eliminar(int x, int y);
+    bool insertar(int x, int y, int dato);
+    virtual ~Matriz();
+private:
+    int fil, col;
+    int **m;
 
 };
 
