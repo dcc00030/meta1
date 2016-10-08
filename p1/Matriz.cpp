@@ -34,12 +34,12 @@ Matriz::Matriz(int nF, int nC) {
 //Devuelve -1 si no existe
 
 int Matriz::at(int x, int y) {
-    if (x < col && y < fil) return m[x][y];
+    if (y < col && x < fil) return m[x][y];
     else return -1;
 }
 
 bool Matriz::eliminar(int x, int y) {
-    if (x < col && y < fil) {
+    if (y < col && x < fil) {
         m[x][y] = -1;
         return true;
     }
@@ -50,7 +50,7 @@ bool Matriz::eliminar(int x, int y) {
 //No sobreescribe. Si la posición está ocupada o no existe, devuelve falso
 
 bool Matriz::insertar(int x, int y, int dato) {
-    if (x < col && y < fil) {
+    if (y < col && x < fil) {
         if (m[x][y] == -1) {
             m[x][y] = dato;
             return true;

@@ -107,6 +107,6 @@ int main(int argc, char** argv) {
     }
      * */
 
-
+    cout << 3 << endl;
     return 0;
 }

@@ -13,46 +13,65 @@
 
 #include "FileHandler.h"
 
+using namespace std;
 FileHandler::FileHandler(string ruta) : ruta(ruta) {
 }
 
 FileHandler::FileHandler(const FileHandler& orig) {
 }
 
+int FileHandler::catoi(char buff []) {
+        string s = (string) buff;
+        return stoi(s);
+}
+
 Matriz FileHandler::obtenerMatrizDatos() {
-    int contador = 0;
-    ifstream file(ruta);
-    char buffer[128];
-    file.getline(buffer, 256, ' '); //Elimina espacio inicial
-
-    file.getline(buffer, 256, ' '); //Obtengo num filas
-    int nFilas = catoi(buffer);
-
-    file.getline(buffer, 256, ' '); //Obtengo num colunmnas
-    int nColum = catoi(buffer);
-    file.getline(buffer, 256, ' ');
-    file.getline(buffer, 256, '\n');
-
-    Matriz matriz = Matriz(nFilas + 1, nColum); //Añado una fila para el coste
-
-    if (file.is_open()) {
-
-        while (!file.eof()) {
-
-            file.getline(buffer, 256, ' ');
-            string test = (string) buffer;
-            try {
-                int num = stoi(test);
-            } catch (exception e) {
-                contador++;
-                if (contador == 2) {
-                    file.getline(buffer, 256, '\n');
-                }
-
-            }
+    int contador = 0; 
+    
+    
+    ifstream file(ruta); //Apertura de archivo
+    
+    if (file.is_open()){
+        
+        cout << "Archivo "<<this->ruta<<" abierto correctamente" << endl;
+        
+        char buffer[128];
+    
+        int nFilas, nColum;
+    
+        file >> nFilas;
+        file >> nColum; //Asigno nº filas y columnas.
+   
+        Matriz matriz = Matriz(nFilas + 1, nColum); //Creo matriz
+                                                //añadiendo una fila para coste
+        //Inserto costes
+        int coste;
+        for (int i = 0; i < nColum; i++){
+            file >> coste;
+            matriz.insertar(0,i,coste);
         }
+        
+        int contador;
+        int columna;
+        
+        //Construyo el resto de la matriz
+        for (int i = 0; i < nFilas; i++){
+            file >> contador; //Nº de columnas que cubren la zona i
+            while (contador > 0){
+                file >> columna;
+                matriz.insertar(i,columna,1); //En la fila i, columna columna
+                                              //Un 1 indica que i cubre columna
+                contador--;
+            }
+           
+        }
+        
+        return matriz;
+
+    } else {
+        cout << "Apertura de " << this->ruta <<" fallida"<<endl;
     }
-    file.close();
+
 }
 
 FileHandler::~FileHandler() {
