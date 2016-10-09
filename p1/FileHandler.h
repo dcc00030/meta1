@@ -25,7 +25,7 @@ public:
     FileHandler(string ruta);
     FileHandler(const FileHandler& orig);
 
-    Matriz obtenerMatrizDatos(); 
+    Matriz & obtenerMatrizDatos(); 
     int getFilas();
     int getColumnas();
     virtual ~FileHandler();

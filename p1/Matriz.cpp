@@ -23,13 +23,13 @@ Matriz::Matriz(int nF, int nC) {
     col = nC;
     m = new int*[fil];
     for (int i = 0; i < fil; i++) {
-            m[i] = new int[col];
-            for(int j = 0; j < col; j++){
-                m[i][j] = -1;
-            }
+        m[i] = new int[col];
+        for (int j = 0; j < col; j++) {
+            m[i][j] = -1;
         }
-
     }
+
+}
 
 //Devuelve -1 si no existe
 
@@ -57,14 +57,25 @@ bool Matriz::insertar(int x, int y, int dato) {
         }
         return false;
 
-    }
-    else return false;
+    } else return false;
 }
+
+void Matriz::mostrar(){
+    for(int i = 0; i < fil; i++){
+        for(int j = 0; j < col; j++){
+            if (j == col)
+                cout <<m[i][j] << endl;
+            else
+                cout <<m[i][j];
+        }
+        }
+    }
+
 
 Matriz::~Matriz() {
     for (int i = 0; i < fil; i++) {
         delete[] m[i];
     }
     delete []m;
-    
+
 }

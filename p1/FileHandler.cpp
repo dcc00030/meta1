@@ -25,7 +25,7 @@ int FileHandler::catoi(char buff []) {
         return stoi(s);
 }
 
-Matriz FileHandler::obtenerMatrizDatos() {
+Matriz & FileHandler::obtenerMatrizDatos() {
     int contador = 0; 
     
     
@@ -42,13 +42,13 @@ Matriz FileHandler::obtenerMatrizDatos() {
         file >> nFilas;
         file >> nColum; //Asigno nº filas y columnas.
    
-        Matriz matriz = Matriz(nFilas + 1, nColum); //Creo matriz
+        Matriz *matriz =new Matriz(nFilas + 1, nColum); //Creo matriz
                                                 //añadiendo una fila para coste
         //Inserto costes
         int coste;
         for (int i = 0; i < nColum; i++){
             file >> coste;
-            matriz.insertar(0,i,coste);
+            matriz->insertar(0,i,coste);
         }
         
         int contador;
@@ -59,14 +59,14 @@ Matriz FileHandler::obtenerMatrizDatos() {
             file >> contador; //Nº de columnas que cubren la zona i
             while (contador > 0){
                 file >> columna;
-                matriz.insertar(i,columna,1); //En la fila i, columna columna
+                matriz->insertar(i,columna,1); //En la fila i, columna columna
                                               //Un 1 indica que i cubre columna
                 contador--;
             }
            
         }
         
-        return matriz;
+        return  *matriz;
 
     } else {
         cout << "Apertura de " << this->ruta <<" fallida"<<endl;

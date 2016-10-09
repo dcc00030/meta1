@@ -25,6 +25,7 @@ public:
     bool eliminar(int x, int y);
     bool insertar(int x, int y, int dato);
     virtual ~Matriz();
+    void mostrar();
 private:
     int fil, col;
     int **m;

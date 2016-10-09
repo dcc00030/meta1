@@ -91,7 +91,7 @@ int main(int argc, char** argv) {
     cout << "introduce el nombre del fichero a cargar" << endl;
     cin >> fichero;
     FileHandler scpe = FileHandler(fichero);
-    scpe.obtenerMatrizDatos();
+    //scpe.obtenerMatrizDatos();
 
     //Todo lo comentado funciona perfectamente
     //    Matriz prueba(4,5);
@@ -106,7 +106,6 @@ int main(int argc, char** argv) {
         }
     }
      * */
-
-    cout << 3 << endl;
+    scpe.obtenerMatrizDatos().mostrar();
     return 0;
 }
