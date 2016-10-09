@@ -20,11 +20,6 @@ FileHandler::FileHandler(string ruta) : ruta(ruta) {
 FileHandler::FileHandler(const FileHandler& orig) {
 }
 
-int FileHandler::catoi(char buff []) {
-        string s = (string) buff;
-        return stoi(s);
-}
-
 Matriz FileHandler::obtenerMatrizDatos() {
     int contador = 0; 
     
