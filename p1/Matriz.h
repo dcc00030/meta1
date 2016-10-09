@@ -24,6 +24,9 @@ public:
     int at(int x, int y);
     bool eliminar(int x, int y);
     bool insertar(int x, int y, int dato);
+    
+    Matriz& operator=(const Matriz& other);
+    
     virtual ~Matriz();
 private:
     int fil, col;

@@ -27,10 +27,20 @@ Matriz::Matriz(int nF, int nC) {
             for(int j = 0; j < col; j++){
                 m[i][j] = -1;
             }
-        }
-
     }
 
+}
+
+//Funciona????
+Matriz& Matriz::operator=(const Matriz& other){
+    for (int i = 0; i < this->fil; i++){
+        delete []m[i];
+    } 
+    delete [] m;
+    
+    m = other.m;
+    return *this;
+}
 //Devuelve -1 si no existe
 
 int Matriz::at(int x, int y) {
