@@ -32,4 +32,3 @@ private:
 };
 
 #endif /* MATRIZ_H */
-
