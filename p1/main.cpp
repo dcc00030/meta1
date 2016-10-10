@@ -30,34 +30,6 @@ int catoi(char buff []) {
 
 int main(int argc, char** argv) {
 
-    //    ifstream file ("scpe1.txt");
-    //    char buffer[128];
-    //    file.getline(buffer,256,' '); //Elimina espacio inicial
-    //    
-    //    file.getline(buffer,256,' '); //Obtengo num filas
-    //    int nFilas = catoi(buffer);
-    //    
-    //    file.getline(buffer,256,' '); //Obtengo num colunmnas
-    //    int nColum = catoi(buffer);
-    //    
-    //    int matriz[nFilas+1][nColum]; //Añado una fila para el coste
-    //    
-    //    if (file.is_open()){
-    //        
-    //        while (!file.eof()){
-    //            
-    //            file.getline(buffer,256,' ');
-    //
-    //            string test = (string)buffer;
-    //
-    //            int num = stoi(test);
-    //
-    //            file.close();
-    //        }
-    //
-    //        
-    //    }
-
     //A partir de aqui comienza el menú
     //    int opcion = 0;
     //    do {
@@ -91,21 +63,7 @@ int main(int argc, char** argv) {
     cout << "introduce el nombre del fichero a cargar" << endl;
     cin >> fichero;
     FileHandler scpe = FileHandler(fichero);
-    //scpe.obtenerMatrizDatos();
 
-    //Todo lo comentado funciona perfectamente
-    //    Matriz prueba(4,5);
-    //    prueba.insertar(2,3,5);
-    //    cout << prueba.at(2,3);
-    /*for (int i = 0; i < 4; i++) {
-        for (int j = 0; j < 5; j++) {
-            if (j == 4)
-                cout << prueba.at(i,j) << endl;
-            else
-                cout << prueba.at(i,j);
-        }
-    }
-     * */
-    scpe.obtenerMatrizDatos().mostrar();
+    scpe.obtenerMatrizDatos();
     return 0;
 }

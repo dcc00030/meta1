@@ -42,7 +42,7 @@ Matriz & FileHandler::obtenerMatrizDatos() {
         file >> nFilas;
         file >> nColum; //Asigno nº filas y columnas.
    
-        Matriz *matriz =new Matriz(nFilas + 1, nColum); //Creo matriz
+        Matriz *matriz =new Matriz(nFilas + 2, nColum); //Creo matriz
                                                 //añadiendo una fila para coste
         //Inserto costes
         int coste;
@@ -55,17 +55,20 @@ Matriz & FileHandler::obtenerMatrizDatos() {
         int columna;
         
         //Construyo el resto de la matriz
-        for (int i = 0; i < nFilas; i++){
+        for (int i = 1; i < nFilas; i++){
             file >> contador; //Nº de columnas que cubren la zona i
             while (contador > 0){
                 file >> columna;
+                matriz->incrementar(1,columna-1);
                 matriz->insertar(i,columna,1); //En la fila i, columna columna
                                               //Un 1 indica que i cubre columna
                 contador--;
             }
            
         }
-        
+        for(int i = 0; i < nColum; i++){
+            cout<<matriz->at(1,i)<< endl;
+        }
         return  *matriz;
 
     } else {

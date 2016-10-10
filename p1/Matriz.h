@@ -26,6 +26,14 @@ public:
     bool insertar(int x, int y, int dato);
     virtual ~Matriz();
     void mostrar();
+
+    void incrementar(int x, int y) {
+        if (m[x][y] != -1) {
+            m[x][y]++;
+        } else {
+            m[x][y] = 1;
+        }
+    };
 private:
     int fil, col;
     int **m;
