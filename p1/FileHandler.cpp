@@ -66,9 +66,6 @@ Matriz & FileHandler::obtenerMatrizDatos() {
             }
            
         }
-        for(int i = 0; i < nColum; i++){
-            cout<<matriz->at(1,i)<< endl;
-        }
         return  *matriz;
 
     } else {

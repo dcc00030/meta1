@@ -26,6 +26,13 @@ public:
     bool insertar(int x, int y, int dato);
     virtual ~Matriz();
     void mostrar();
+    int nFil(){
+        return fil;
+    }
+    int nCol(){
+        return col;
+    }
+    Matriz& operator=(Matriz& b);
 
     void incrementar(int x, int y) {
         if (m[x][y] != -1) {
@@ -34,6 +41,10 @@ public:
             m[x][y] = 1;
         }
     };
+    
+    void decrementar(int x, int y) {
+        m[x][y]--;
+    }
 private:
     int fil, col;
     int **m;

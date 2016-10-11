@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/FileHandler.o \
+	${OBJECTDIR}/Greedy.o \
 	${OBJECTDIR}/Matriz.o \
 	${OBJECTDIR}/main.o
 
@@ -68,6 +69,11 @@ ${OBJECTDIR}/FileHandler.o: FileHandler.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/FileHandler.o FileHandler.cpp
+
+${OBJECTDIR}/Greedy.o: Greedy.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Greedy.o Greedy.cpp
 
 ${OBJECTDIR}/Matriz.o: Matriz.cpp 
 	${MKDIR} -p ${OBJECTDIR}

@@ -71,6 +71,19 @@ void Matriz::mostrar(){
         }
     }
 
+Matriz& Matriz::operator =( Matriz& b){
+    Matriz* ma = new Matriz(b.nFil(),b.nCol());
+    for(int i = 0; i < b.nFil(); i++){
+        for(int j = 0; j < b.nCol(); j++){
+            ma->insertar(i,j,b.at(i,j));
+        }
+    }
+    this->m = ma->m;
+    this->col = ma->col;
+    this->fil = ma->fil;
+    
+    return *this;
+}
 
 Matriz::~Matriz() {
     for (int i = 0; i < fil; i++) {
