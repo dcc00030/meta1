@@ -29,15 +29,14 @@ bool* Greedy::calcularSolucion() {
             
         }
         
-        for (int i = 2; i < datos->nFil(); i++){
-            
-            for (int j = 0; j < datos->nCol(); j++){
-                if (pMax == j){
-                    if (datos->at(i,j) != -1){
+        for(int i = 2; i < datos->nFil();i++){
+            if(datos->at(i,pMax)== 1){
+                for(int j = 0; j < datos->nCol(); j++){
+                    if(datos->at(i,j)== 1 && j != pMax){
+                        datos->eliminar(i,j);
                         datos->decrementar(1,j);
                     }
                 }
-                
             }
         }
         
