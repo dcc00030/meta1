@@ -60,7 +60,7 @@ Matriz & FileHandler::obtenerMatrizDatos() {
             while (contador > 0){
                 file >> columna;
                 matriz->incrementar(1,columna-1);
-                matriz->insertar(i,columna,1); //En la fila i, columna columna
+                matriz->insertar(i,columna-1,1); //En la fila i, columna columna
                                               //Un 1 indica que i cubre columna
                 contador--;
             }
