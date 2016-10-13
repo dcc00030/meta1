@@ -65,7 +65,7 @@ Matriz & FileHandler::obtenerMatrizDatos() {
             }
            
         }
-        cout << "Parece que puedes alegrarte "<<endl;
+
         return  *matriz;
 
     } else {

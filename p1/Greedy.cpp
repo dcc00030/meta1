@@ -58,6 +58,8 @@ bool* Greedy::calcularSolucion() {
         sol[pMax] = true;
 
         if (fCubiertas == datos->nFil()) fin = true;
+        
+
     }
 }
 

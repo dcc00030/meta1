@@ -38,9 +38,6 @@ public:
 
     void incrementar(int x, int y) {
         int aux;
-        if (y == 0){
-            cout <<" ";
-        }
         aux = m[x][y];
         m[x][y]++;
         aux = m[x][y];
