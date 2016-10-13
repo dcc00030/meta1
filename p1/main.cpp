@@ -43,7 +43,11 @@ int main(int argc, char** argv) {
             case 0:
                 // algoritmo greedy
                 Greedy alg1 = Greedy(*m);
-                alg1.calcularSolucion();
+                cout << m->at(1,0);
+                for (int i = 2; i < 50; i++){
+                    cout << m->at(i,0) << endl;
+                }
+                //alg1.calcularSolucion();
                 break;
 
 //            case 1:

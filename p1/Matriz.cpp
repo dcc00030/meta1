@@ -16,8 +16,8 @@
 using namespace std;
 
 Matriz::Matriz(int nF, int nC) {
-    if (nF <= 0) throw invalid_argument("Number of rows must be grater than 0");
-    if (nC <= 0) throw invalid_argument("Number of columns must be grater than 0");
+    if (nF <= 0) throw invalid_argument("Number of rows must be greater than 0");
+    if (nC <= 0) throw invalid_argument("Number of columns must be greater than 0");
 
     fil = nF;
     col = nC;
@@ -25,7 +25,7 @@ Matriz::Matriz(int nF, int nC) {
     for (int i = 0; i < fil; i++) {
         m[i] = new int[col];
         for (int j = 0; j < col; j++) {
-            m[i][j] = -1;
+            m[i][j] = 0;
         }
     }
 
@@ -40,23 +40,18 @@ int Matriz::at(int x, int y) {
 
 bool Matriz::eliminar(int x, int y) {
     if (y < col && x < fil) {
-        m[x][y] = -1;
+        m[x][y] = 0;
         return true;
     }
     return false;
 
 }
 
-//No sobreescribe. Si la posición está ocupada o no existe, devuelve falso
 
 bool Matriz::insertar(int x, int y, int dato) {
     if (y < col && x < fil) {
-        if (m[x][y] == -1) {
             m[x][y] = dato;
             return true;
-        }
-        return false;
-
     } else return false;
 }
 

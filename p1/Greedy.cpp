@@ -15,7 +15,8 @@ Greedy::Greedy( Matriz &datos) {
 bool* Greedy::calcularSolucion() {
 
     bool fin = false;
-    int ratio,pMax,max;
+    float ratio;
+    int pMax,max;
     int fCubiertas = 0;
     
     while(!fin){
@@ -35,8 +36,9 @@ bool* Greedy::calcularSolucion() {
         
         //Eliminamos la columna y dejamos de tener en cuenta las zonas ya cubiertas
         //por esta columna que también lo hacen otras
+        
+
         for(int i = 2; i < datos->nFil();i++){
-            int aux = datos->at(i,pMax);
             if(datos->at(i,pMax)== 1){
                 fCubiertas++;
                 for(int j = 0; j < datos->nCol(); j++){
@@ -44,17 +46,18 @@ bool* Greedy::calcularSolucion() {
                         datos->eliminar(i,j);
                         datos->decrementar(1,j);
                         
+                        
                     }
                 }
             }
         }
-        for(int i = 0; i <datos->nFil() ; i++){
+        for(int i = 0; i <datos->nFil()-2 ; i++){
             cout<<sol[i]<<" ";
         }
         
         sol[pMax] = true;
 
-        if (fCubiertas == datos->nFil()-4) fin = true;
+        if (fCubiertas == datos->nFil()) fin = true;
     }
 }
 

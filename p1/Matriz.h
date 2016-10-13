@@ -26,25 +26,32 @@ public:
     bool insertar(int x, int y, int dato);
     virtual ~Matriz();
     void mostrar();
-    int nFil(){
+
+    int nFil() {
         return fil;
     }
-    int nCol(){
+
+    int nCol() {
         return col;
     }
     Matriz& operator=(Matriz& b);
 
     void incrementar(int x, int y) {
+        int aux;
+        if (y == 0){
+            cout <<" ";
+        }
+        aux = m[x][y];
+        m[x][y]++;
+        aux = m[x][y];
+
+    };
+
+    void decrementar(int x, int y) {
         if (m[x][y] != -1) {
-            m[x][y]++;
-        } else {
-            m[x][y] = 1;
+            m[x][y]--;
         }
     };
-    
-    void decrementar(int x, int y) {
-        m[x][y]--;
-    }
 private:
     int fil, col;
     int **m;
