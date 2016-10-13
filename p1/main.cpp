@@ -22,25 +22,15 @@
 #include "Greedy.h"
 using namespace std;
 
-//Toma un buffer de chars y lo pasa a int
-
-int catoi(char buff []) {
-    string s = (string) buff;
-    return stoi(s);
-}
-
 int main(int argc, char** argv) {
 
     string fichero;
-    cout << "introduce el nombre del fichero a cargar" << endl;
+    cout << "Introduce el nombre del fichero de datos: ";
     cin >> fichero;
     FileHandler scpe = FileHandler(fichero);
     Matriz *m = &scpe.obtenerMatrizDatos();
-    
-    for (int i = 0; i < m->nFil(); i++){
-        cout <<m->at(i,0) <<endl;
-    }
-    // A partir de aqui comienza el menú
+
+    //Interfaz para ejecutar algoritmos
     int opcion = 0;
     do {
         cout << "Introduce 0 para algoritmo greedy " << endl;
@@ -53,7 +43,7 @@ int main(int argc, char** argv) {
             case 0:
                 // algoritmo greedy
                 Greedy alg1 = Greedy(*m);
-                cout << alg1.calcularSolucion();
+                alg1.calcularSolucion();
                 break;
 
 //            case 1:
