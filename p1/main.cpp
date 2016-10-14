@@ -29,6 +29,8 @@ int main(int argc, char** argv) {
     cin >> fichero;
     FileHandler scpe = FileHandler(fichero);
     Matriz *m = &scpe.obtenerMatrizDatos();
+    
+    
 
     //Interfaz para ejecutar algoritmos
     int opcion = 0;

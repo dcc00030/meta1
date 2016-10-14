@@ -58,7 +58,7 @@ bool Matriz::insertar(int x, int y, int dato) {
 void Matriz::mostrar(){
     for(int i = 0; i < fil; i++){
         for(int j = 0; j < col; j++){
-            if (j == col)
+            if (j == col-1)
                 cout <<m[i][j] << endl;
             else
                 cout <<m[i][j];

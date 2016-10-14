@@ -62,6 +62,7 @@ Matriz & FileHandler::obtenerMatrizDatos() {
                 matriz->insertar(i,columna-1,1); //En la fila i, columna columna
                                               //Un 1 indica que i cubre columna
                 contador--;
+                
             }
            
         }

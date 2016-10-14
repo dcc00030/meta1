@@ -37,10 +37,8 @@ public:
     Matriz& operator=(Matriz& b);
 
     void incrementar(int x, int y) {
-        int aux;
-        aux = m[x][y];
+    
         m[x][y]++;
-        aux = m[x][y];
 
     };
 
