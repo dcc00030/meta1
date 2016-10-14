@@ -10,13 +10,17 @@
 Greedy::Greedy( Matriz &datos) {
     this-> datos = &datos;
     sol = new bool[datos.nCol()];
+    for (int i = 0; i < datos.nCol();i++){
+        sol[i] = false;
+    }
 }
 
 bool* Greedy::calcularSolucion() {
 
     bool fin = false;
     float ratio;
-    int pMax,max;
+    int pMax;
+    float max;
     int fCubiertas = 0;
     
     while(!fin){
@@ -24,7 +28,7 @@ bool* Greedy::calcularSolucion() {
         max = -2;
         for (int i = 0; i < datos->nCol(); i++){
             ratio = datos->at(1,i) / datos->at(0,i);
-            cout << "Ratio para columna "<<i << " : "<<ratio<<endl;
+            cout << "Ratio para columna " << i << " : " << ratio << endl;
             if (ratio > max && sol[i] == false){
                 max = ratio;
                 pMax = i;
@@ -32,7 +36,7 @@ bool* Greedy::calcularSolucion() {
             
         }
         
-        cout << "Mejor ratio: "<<max << " que pertenece a la columna "<<pMax << endl;
+        
         
         //Eliminamos la columna y dejamos de tener en cuenta las zonas ya cubiertas
         //por esta columna que también lo hacen otras
@@ -51,13 +55,16 @@ bool* Greedy::calcularSolucion() {
                 }
             }
         }
-        for(int i = 0; i <datos->nFil()-2 ; i++){
-            cout<<sol[i]<<" ";
-        }
         
         sol[pMax] = true;
 
-        if (fCubiertas == datos->nFil()) fin = true;
+        cout << "Solucion actual: "<< endl;
+        for (int i = 0; i < datos->nCol(); i++){
+            if (sol[i]) cout << "yes ";
+            else cout <<"no ";
+        }
+        
+        if (fCubiertas == datos->nFil()-2) fin = true;
         
 
     }
