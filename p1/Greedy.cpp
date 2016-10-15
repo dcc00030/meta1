@@ -17,18 +17,17 @@ Greedy::Greedy( Matriz &datos) {
 
 bool* Greedy::calcularSolucion() {
 
-    bool fin = false;
-    float ratio;
-    int pMax;
-    float max;
-    int fCubiertas = 0;
+    bool fin = false; //Condicion de parada
+    float ratio; //Ratio entre efectividad y coste 
+    int pMax; //Posicion de la mejor columna (más ratio)
+    float max; 
+    int fCubiertas = 0; //Nº de filas que se han cubierto
     
     while(!fin){
         //Busco zona que maximice ratio.
         max = -2;
         for (int i = 0; i < datos->nCol(); i++){
             ratio = datos->at(1,i) / datos->at(0,i);
-            cout << "Ratio para columna " << i << " : " << ratio << endl;
             if (ratio > max && sol[i] == false){
                 max = ratio;
                 pMax = i;
@@ -56,18 +55,15 @@ bool* Greedy::calcularSolucion() {
             }
         }
         
-        sol[pMax] = true;
-
-        cout << "Solucion actual: "<< endl;
-        for (int i = 0; i < datos->nCol(); i++){
-            if (sol[i]) cout << "yes ";
-            else cout <<"no ";
-        }
+        sol[pMax] = true; //Marcamos la columna en el vector solucion
         
-        if (fCubiertas == datos->nFil()-2) fin = true;
+        if (fCubiertas == datos->nFil()-2) fin = true; //Si todas las filas 
+                                                       //están cubiertas
+                                                       //podemos parar
         
 
     }
+
     return sol;
 }
 int Greedy::calcularCosto(){

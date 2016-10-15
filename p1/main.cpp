@@ -21,12 +21,13 @@
 #include "FileHandler.h"
 #include "Greedy.h"
 #include "BusLocal.h"
+#include "random.h"
 using namespace std;
 
 int main(int argc, char** argv) {
 
-    string fichero;
-    bool *sol;
+    string fichero; 
+    bool *solGreedy; //
     cout << "Introduce el nombre del fichero de datos: ";
     cin >> fichero;
     FileHandler scpe = FileHandler(fichero);
@@ -41,28 +42,26 @@ int main(int argc, char** argv) {
         cout << "Introduce 1 para algoritmo de búsqueda local" << endl;
         cout << "Introduce 2 para algoritmo tabú" << endl;
         cout << "Introduce 3 para algoritmo GRASP" << endl;
+        cout << "Introduce 4 para cambiar de fichero " << endl;
         cout << "Introduce -1 para salir" << endl;
         cin>>opcion;
         switch (opcion) {
             case 0:
             {
-                // algoritmo greedy
-                Greedy alg1 = Greedy(*m);
-                sol = alg1.calcularSolucion();
-                for (int i = 0; i < m->nCol(); i++) {
-                    cout << sol[i]<<endl;
-                }
+                //Algoritmo Greedy
+                Greedy algoritmoGreedy = Greedy(*m); //Pasamos la eedd con los datos de entrada
+                solGreedy = algoritmoGreedy.calcularSolucion(); //solGreedy almacena el array con la solucion al problema
+                
+                cout << "La solucion mediante algoritmo greedy para los datos "
+                     << fichero << " ha sido calculada" << endl;
                 break;
             }
             case 1:
             {
-                //algoritmo de busqueda local
-                BusLocal *bus;
-                int al = 0;
-                for (int i = 0; i < m->nCol(); i++) {
-                    cout << sol[i]<<endl;
-                }
-                al = bus->aleatorio(sol, m);
+                //Algoritmo de busqueda local
+                BusLocal *busLoc;
+                int eleccion; //Almacenará el subconjunto que se elimina de la solución
+                al = busLoc->aleatorio(solGreedy);
                 cout<< al<<endl;
                 break;
             }
@@ -76,7 +75,12 @@ int main(int argc, char** argv) {
                 //                algoritmo GRASP
                 //                break;
                 //            }
-
+            case 4:
+                cout << "Introduce el nombre del fichero de datos: ";
+                cin >> fichero;
+                scpe = FileHandler(fichero);
+                m = &scpe.obtenerMatrizDatos();
+                break;
 
         }
 
