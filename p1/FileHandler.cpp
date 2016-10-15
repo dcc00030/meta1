@@ -54,7 +54,7 @@ Matriz & FileHandler::obtenerMatrizDatos() {
         int contador;
         int columna;
         //Construyo el resto de la matriz
-        for (int i = 2; i < nFilas; i++){
+        for (int i = 2; i < matriz->nFil(); i++){
             file >> contador; //Nº de columnas que cubren la zona i
             while (contador > 0){
                 file >> columna;

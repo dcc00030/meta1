@@ -28,7 +28,8 @@ int main(int argc, char** argv) {
     cout << "Introduce el nombre del fichero de datos: ";
     cin >> fichero;
     FileHandler scpe = FileHandler(fichero);
-    Matriz *m = &scpe.obtenerMatrizDatos();
+    scpe.obtenerMatrizDatos().mostrar();
+    /*Matriz *m = &scpe.obtenerMatrizDatos();
     
     
 
@@ -66,6 +67,6 @@ int main(int argc, char** argv) {
 
     } while (opcion != -1);
 
-
+*/
     return 0;
 }

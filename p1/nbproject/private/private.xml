@@ -7,11 +7,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Andrea/Documents/NetBeansProjects/meta/p1/Matriz.h</file>
-            <file>file:/C:/Users/Andrea/Documents/NetBeansProjects/meta/p1/FileHandler.cpp</file>
-            <file>file:/C:/Users/Andrea/Documents/NetBeansProjects/meta/p1/Greedy.cpp</file>
-            <file>file:/C:/Users/Andrea/Documents/NetBeansProjects/meta/p1/main.cpp</file>
-            <file>file:/C:/Users/Andrea/Documents/NetBeansProjects/meta/p1/Matriz.cpp</file>
+            <file>file:/home/dcasquel/NetBeansProjects/meta1/p1/Matriz.cpp</file>
+            <file>file:/home/dcasquel/NetBeansProjects/meta1/p1/Matriz.h</file>
+            <file>file:/home/dcasquel/NetBeansProjects/meta1/p1/FileHandler.cpp</file>
+            <file>file:/home/dcasquel/NetBeansProjects/meta1/p1/FileHandler.h</file>
+            <file>file:/home/dcasquel/NetBeansProjects/meta1/p1/Greedy.h</file>
+            <file>file:/home/dcasquel/NetBeansProjects/meta1/p1/main.cpp</file>
+            <file>file:/home/dcasquel/NetBeansProjects/meta1/p1/Greedy.cpp</file>
         </group>
     </open-files>
 </project-private>
