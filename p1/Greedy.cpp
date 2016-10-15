@@ -68,8 +68,17 @@ bool* Greedy::calcularSolucion() {
         
 
     }
+    return sol;
 }
-
+int Greedy::calcularCosto(){
+    int suma = 0;
+    for(int i = 0; i < datos->nCol(); i++){
+        if(sol[i] == 1){
+            suma = suma + datos->at(1,i);
+        }
+    }
+    return suma;
+}
 Greedy::~Greedy() {
     delete []sol;
 }

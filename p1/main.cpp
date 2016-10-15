@@ -20,18 +20,19 @@
 #include "Matriz.h"
 #include "FileHandler.h"
 #include "Greedy.h"
+#include "BusLocal.h"
 using namespace std;
 
 int main(int argc, char** argv) {
 
     string fichero;
+    bool *sol;
     cout << "Introduce el nombre del fichero de datos: ";
     cin >> fichero;
     FileHandler scpe = FileHandler(fichero);
-    scpe.obtenerMatrizDatos().mostrar();
-    /*Matriz *m = &scpe.obtenerMatrizDatos();
-    
-    
+    Matriz *m = &scpe.obtenerMatrizDatos();
+
+
 
     //Interfaz para ejecutar algoritmos
     int opcion = 0;
@@ -44,29 +45,43 @@ int main(int argc, char** argv) {
         cin>>opcion;
         switch (opcion) {
             case 0:
+            {
                 // algoritmo greedy
                 Greedy alg1 = Greedy(*m);
-                alg1.calcularSolucion();
-                
-                //alg1.calcularSolucion();
+                sol = alg1.calcularSolucion();
+                for (int i = 0; i < m->nCol(); i++) {
+                    cout << sol[i]<<endl;
+                }
                 break;
-
-//            case 1:
-//                algoritmo de busqueda local
-//                break;
-//
-//            case 2:
-//                algoritmo de busqueda tabu
-//                break;
-//            case 3:
-//                algoritmo GRASP
-//                break;
+            }
+            case 1:
+            {
+                //algoritmo de busqueda local
+                BusLocal *bus;
+                int al = 0;
+                for (int i = 0; i < m->nCol(); i++) {
+                    cout << sol[i]<<endl;
+                }
+                al = bus->aleatorio(sol, m);
+                cout<< al<<endl;
+                break;
+            }
+                //            case 2:
+                //            {
+                //                algoritmo de busqueda tabu
+                //                break;
+                //            }
+                //            case 3:
+                //            {
+                //                algoritmo GRASP
+                //                break;
+                //            }
 
 
         }
 
     } while (opcion != -1);
 
-*/
+
     return 0;
 }

@@ -13,6 +13,7 @@ public:
     Greedy( Matriz &datos);
     virtual ~Greedy();
     bool* calcularSolucion();
+    int calcularCosto();
 private:
     Matriz *datos;
     bool *sol;

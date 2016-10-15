@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/BusLocal.o \
 	${OBJECTDIR}/FileHandler.o \
 	${OBJECTDIR}/Greedy.o \
 	${OBJECTDIR}/Matriz.o \
@@ -64,6 +65,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/p1: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/p1 ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/BusLocal.o: BusLocal.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/BusLocal.o BusLocal.cpp
 
 ${OBJECTDIR}/FileHandler.o: FileHandler.cpp 
 	${MKDIR} -p ${OBJECTDIR}

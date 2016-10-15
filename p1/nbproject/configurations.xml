@@ -4,6 +4,7 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>BusLocal.h</itemPath>
       <itemPath>FileHandler.h</itemPath>
       <itemPath>Greedy.h</itemPath>
       <itemPath>Matriz.h</itemPath>
@@ -15,6 +16,7 @@
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>BusLocal.cpp</itemPath>
       <itemPath>FileHandler.cpp</itemPath>
       <itemPath>Greedy.cpp</itemPath>
       <itemPath>Matriz.cpp</itemPath>
@@ -42,6 +44,10 @@
       </toolsSet>
       <compileType>
       </compileType>
+      <item path="BusLocal.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BusLocal.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="FileHandler.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="FileHandler.h" ex="false" tool="3" flavor2="0">
@@ -77,6 +83,10 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="BusLocal.cpp" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="BusLocal.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="FileHandler.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="FileHandler.h" ex="false" tool="3" flavor2="0">
