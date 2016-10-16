@@ -6,7 +6,8 @@
  */
 
 #include "BusLocal.h"
-#include "random.h"
+#include "Random.h"
+
 BusLocal::BusLocal() {
 }
 
@@ -14,15 +15,13 @@ BusLocal::BusLocal(const BusLocal& orig) {
 }
 
 int BusLocal::seleccionAleatoria(bool* b, Matriz* m) {
-    
-    int eleccion = Randint(0,m->nCol());
+
+    int eleccion = Randint(0, m->nCol());
     while (b[eleccion] != 1) {
-        if(eleccion == m->nCol()){
-            eleccion = 0;
-        }else{
-        eleccion++;
-        }
+        eleccion = Randint(0, m->nCol());
     }
+
+
     return eleccion;
 }
 

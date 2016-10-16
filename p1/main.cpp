@@ -21,7 +21,7 @@
 #include "FileHandler.h"
 #include "Greedy.h"
 #include "BusLocal.h"
-#include "random.h"
+#include "Random.h"
 using namespace std;
 
 int main(int argc, char** argv) {

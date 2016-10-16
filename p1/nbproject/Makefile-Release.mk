@@ -39,6 +39,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/FileHandler.o \
 	${OBJECTDIR}/Greedy.o \
 	${OBJECTDIR}/Matriz.o \
+	${OBJECTDIR}/Random.o \
 	${OBJECTDIR}/main.o
 
 
@@ -85,6 +86,11 @@ ${OBJECTDIR}/Matriz.o: Matriz.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Matriz.o Matriz.cpp
+
+${OBJECTDIR}/Random.o: Random.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/Random.o Random.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}

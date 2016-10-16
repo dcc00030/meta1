@@ -8,6 +8,7 @@
       <itemPath>FileHandler.h</itemPath>
       <itemPath>Greedy.h</itemPath>
       <itemPath>Matriz.h</itemPath>
+      <itemPath>Random.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -20,6 +21,7 @@
       <itemPath>FileHandler.cpp</itemPath>
       <itemPath>Greedy.cpp</itemPath>
       <itemPath>Matriz.cpp</itemPath>
+      <itemPath>Random.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -33,7 +35,6 @@
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
-    <itemPath>random.h</itemPath>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -65,9 +66,11 @@
       </item>
       <item path="Matriz.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      <item path="Random.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="random.h" ex="false" tool="3" flavor2="0">
+      <item path="Random.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
     <conf name="Release" type="1">
@@ -106,9 +109,11 @@
       </item>
       <item path="Matriz.h" ex="false" tool="3" flavor2="0">
       </item>
-      <item path="main.cpp" ex="false" tool="1" flavor2="0">
+      <item path="Random.cpp" ex="false" tool="1" flavor2="0">
       </item>
-      <item path="random.h" ex="false" tool="3" flavor2="0">
+      <item path="Random.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
     </conf>
   </confs>
