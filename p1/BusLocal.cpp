@@ -13,11 +13,15 @@ BusLocal::BusLocal() {
 BusLocal::BusLocal(const BusLocal& orig) {
 }
 
-int BusLocal::seleccionAleatoria(bool* b) {
+int BusLocal::seleccionAleatoria(bool* b, Matriz* m) {
     
-    float eleccion = Randint(0,499);
-    while (b[aleatorio] != 1) {
-        eleccion = Randint(0,499);
+    int eleccion = Randint(0,m->nCol());
+    while (b[eleccion] != 1) {
+        if(eleccion == m->nCol()){
+            eleccion = 0;
+        }else{
+        eleccion++;
+        }
     }
     return eleccion;
 }

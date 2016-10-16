@@ -76,6 +76,6 @@ int Greedy::calcularCosto(){
     return suma;
 }
 Greedy::~Greedy() {
-    delete []sol;
+   // delete []sol;
 }
 

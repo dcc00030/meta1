@@ -61,8 +61,8 @@ int main(int argc, char** argv) {
                 //Algoritmo de busqueda local
                 BusLocal *busLoc;
                 int eleccion; //Almacenará el subconjunto que se elimina de la solución
-                al = busLoc->aleatorio(solGreedy);
-                cout<< al<<endl;
+                eleccion = busLoc->seleccionAleatoria(solGreedy,m);
+                cout<< eleccion<<endl;
                 break;
             }
                 //            case 2:

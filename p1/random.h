@@ -10,7 +10,7 @@
 #define MASK 2147483647
 #define PRIME 65539
 #define SCALE 0.4656612875e-9
-
+#define Seed 26258657
 /*******************************************************************/
 /*  Rand genera un numero real pseudoaleatorio entre 0 y 1,        */
 /*  excluyendo el 1.						   */
@@ -20,9 +20,10 @@
 /*  y no incluido high                                             */
 /*******************************************************************/
 
-#define Rand()  (( Seed = ( (Seed * PRIME) & MASK) ) * SCALE )
+//tuve que borrar la asignacion Seed = Seed 
+#define Rand()  (( ( (Seed * PRIME) & MASK) ) * SCALE )
 
-#define Randint(low,high) ( (int) (low + (high-(low)+1) * Rand()))
+#define Randint(low,high) ( (long) (low + (high-(low)+1) * Rand()))
 
 #define Randfloat(low,high) ( (low + (high-(low))*Rand()))
 

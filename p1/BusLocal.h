@@ -15,7 +15,7 @@ public:
     BusLocal();
     BusLocal(const BusLocal& orig);
     virtual ~BusLocal();
-    int aleatorio(bool *b,Matriz *m);
+    int seleccionAleatoria(bool *b,Matriz *m);
     
 private:
     
