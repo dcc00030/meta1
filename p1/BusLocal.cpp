@@ -16,9 +16,9 @@ BusLocal::BusLocal(const BusLocal& orig) {
 
 int BusLocal::seleccionAleatoria(bool* b, Matriz* m) {
 
-    int eleccion = Randint(0, m->nCol());
-    while (b[eleccion] != 1) {
-        eleccion = Randint(0, m->nCol());
+    int eleccion = Randint(0, m->nCol() -1);
+    while (b[eleccion] != 1 ) {
+        eleccion = Randint(0, m->nCol()-1);
     }
 
 
